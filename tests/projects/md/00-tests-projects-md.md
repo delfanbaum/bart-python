@@ -1,0 +1,1 @@
+= tests/projects/adoc

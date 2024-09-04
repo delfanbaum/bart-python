@@ -1,0 +1,6 @@
+:description: While I will always recommend using asciidoc, so long as the \
+relevant "build" executable is available (should this be configurable? \
+Probably.), we will `glob` and combine and build whatever appropriately \
+prefixed files match the file extension of the `00-` file. In other words, \
+you can't mix filetypes within a project (this would be madness!), but you \
+can use pretty much whatever you want.

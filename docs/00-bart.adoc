@@ -1,0 +1,8 @@
+= The Bart Docs
+:description: The `00-` file is the "title and metadata" file. Things like the \
+project/book title are here, the author line is here, as well as any document \
+attributes (for example, a `:doctype: book` attribute in asciidoc), etc. 
+
+Welcome to the `bart` documentation! Here you'll find an example project that
+contains information about how to use `bart` to manage your plain-text writing
+projects.

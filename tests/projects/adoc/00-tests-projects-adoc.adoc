@@ -1,0 +1,3 @@
+= tests/projects/adoc
+:doctype: book
+:description: a test adoc project

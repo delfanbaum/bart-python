@@ -1,0 +1,60 @@
+= Bart
+
+Seeing the "big picture, but being able to drill into details" (Aaron)
+
+So: outline view, collapsible descriptions, these being editable, maybe you can
+even write the outline to a yaml file, futz with it, and then it gets read back?
+
+What might have made writing the last book easier?
+
+File-based "database"; kind of like duck-typing filenames and comments
+conventions. All the info you might want is recorded in either the
+files themselves or in their filenames. The one exception will be charting
+project process, for which I think we'll probably end up needing some kind of
+_simple_ `.bart.json` file to store things like word counts over time, etc.
+There is a world in which I'd start with this as a feature, but I would prefer
+to keep everything "in the files" as much as possible so that it's editable and
+easy; otherwise it would make just as much sense to keep the text content inside
+the database as well to avoid filename change issues, etc. (These will still be
+present if we got with json or other for wordcounts, etc., but I _think_ we just
+then include some kind of `bart rename <old-name> <new-name>` command, which
+we'll need anyway for the outline view editing).
+
+There will be a global config with some settable defaults (e.g., filetype, build
+executable, custom delimiters for filetypes other than the ones I'm planning to
+explicitly support).
+
+Command ideas:
+
+`bart begin <project-name>`:: creates a directory and a "00-project-name.adoc"
+(or other default extension) file; default is "00", but configurable to "000"
+if, say, you want to have "sub-chapters" or the like.
+
+`bart add level`:: adds another "0" column to the numbering scheme, bumps
+existing files up, e.g., "21" becomes "210"
+
+`bart split headings <filename>`:: splits a file at any heading based on
+filetype or config value, e.g., when you start a document and realize it would
+be good to split out
+
+`bart split breaks <filename>`:: splits a file at breaks, e.g., `'''` in
+asciidoc, or `#` in txt, or... whatever it is in markdown. I think `---` IIRC.
+
+`bart join <file> <other file>`:: joins two files
+
+`bart build <file>`:: builds a file, probably pulling any default metadata from
+the double-zero file if applicable (e.g., `:css-signature:`)
+
+`bart build .` or `bart build project`:: builds the project into HTML,
+optionally (configurable?) shoving something like `pagedjs` in there also for
+printing.
+
+Then later:
+
+`bart outline`:: opens a TUI with outline, collapsible descriptions
+
+`bart corkboard`:: opens a "corkboard" view with each document as a "card" and
+description, editable, etc. Probably there will be a way to open files from
+here, too, either in a new tmux window or pane (configurable) if tmux is active,
+_or_ maybe a new view in the TUI itself with the bare editor. Or maybe not; not
+sure that's as useful? TBD.

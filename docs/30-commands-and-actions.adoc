@@ -1,0 +1,2 @@
+:description: Provide a little more detail about various commands and actions, \
+as well as tips for use, than can be gathered from `bart --help`.

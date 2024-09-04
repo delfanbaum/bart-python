@@ -1,0 +1,2 @@
+:description: Describe the project organization, esp. how we use filename \ 
+prefix numbering to generate outlines, etc.
