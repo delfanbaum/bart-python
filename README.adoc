@@ -1,5 +1,11 @@
 = Bart
 
+NOTE: This project is bascially mothballed; please see the 
+https://github.com/delfanbaum/bart[rust] port for any future work along these lines.
+
+
+
+
 Seeing the "big picture, but being able to drill into details" (Aaron)
 
 So: outline view, collapsible descriptions, these being editable, maybe you can
